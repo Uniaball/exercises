@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>     //æ­¤æ–‡ä»¶æœ‰éƒ¨åˆ†ç”±AIä¿®æ­£
 #include <string>
 #include <random>
 #include <windows.h>
@@ -10,301 +10,301 @@ uniform_int_distribution<int> dist(1, 2);
 
 int main()
 {
-    //È«¾Ö±äÁ¿³õÊ¼»¯Çø
+    //å…¨å±€å˜é‡åˆå§‹åŒ–åŒº
     //bool Game = 0;
     bool LeftHandWin = 0;
     bool RightHandWin = 0;
     bool LeftHandWin2 = 0;
     bool RightHandWin2 = 0;
-    //ÓÎÏ·¿ªÊ¼
+    //æ¸¸æˆå¼€å§‹
 
     string GameStart;
-    cout << "ÊäÈëstart¿ªÊ¼ÓÎÏ·" << endl;
+    cout << "è¾“å…¥startå¼€å§‹æ¸¸æˆ" << endl;
     cin >> GameStart;
 
     if (GameStart != "start") {
-        cout << "Î´ÊäÈëÕıÈ·×Ö·û£¬½ø³Ì½áÊø" << endl;
+        cout << "æœªè¾“å…¥æ­£ç¡®å­—ç¬¦ï¼Œè¿›ç¨‹ç»“æŸ" << endl;
         return 1;
     }
     else if (GameStart == "start") {
-        cout << "ÓÎÏ·¿ªÊ¼" << endl;
+        cout << "æ¸¸æˆå¼€å§‹" << endl;
     }
-    //³õÊ¼»¯×óÓÒÊÖ
-    //for (;;) {  //ÓÎÏ·Ö÷Ñ­»·
+    //åˆå§‹åŒ–å·¦å³æ‰‹
+    //for (;;) {  //æ¸¸æˆä¸»å¾ªç¯
 
         short LeftNum = 1, RightNum = 1;
-        cout << "ÕâÊÇÄãµÄÁ½¸öÊÖ£¬×ó¡¢ÓÒÊÖ´ËÊ±¶¼ÊÇ1" << endl;
-        cout << "×ó£º" << LeftNum << " ÓÒ£º" << RightNum << endl;
+        cout << "è¿™æ˜¯ä½ çš„ä¸¤ä¸ªæ‰‹ï¼Œå·¦ã€å³æ‰‹æ­¤æ—¶éƒ½æ˜¯1" << endl;
+        cout << "å·¦ï¼š" << LeftNum << " å³ï¼š" << RightNum << endl;
 
         short LeftNum2 = 1, RightNum2 = 1;
-        cout << "ÕâÊÇÄãµÄ¶ÔÊÖ£¨ÈõÖÇai£©µÄ×ó¡¢ÓÒÊÖ" << endl;
-        cout << "×ó£º" << LeftNum2 << " ÓÒ£º" << RightNum2 << endl;
+        cout << "è¿™æ˜¯ä½ çš„å¯¹æ‰‹ï¼ˆå¼±æ™ºaiï¼‰çš„å·¦ã€å³æ‰‹" << endl;
+        cout << "å·¦ï¼š" << LeftNum2 << " å³ï¼š" << RightNum2 << endl;
 
-        //Ñ¡Ôñ×Ô¼º³öµÄÊÖ
+        //é€‰æ‹©è‡ªå·±å‡ºçš„æ‰‹
         for (;;) {
 
-            cout << "Ñ¡ÔñÄãµÄÒ»Ö»ÊÖ£¨ÊäÈëL»òR£©" << endl;
+            cout << "é€‰æ‹©ä½ çš„ä¸€åªæ‰‹ï¼ˆè¾“å…¥Læˆ–Rï¼‰" << endl;
             bool ChooseLeftHand = 0, ChooseRightHand = 0;
             char Choice;
             cin >> Choice;
             switch (Choice) {
             case 'L': {
-                if (LeftHandWin != 1) {  // ĞŞÕı£ºÖ»¼ì²éÊÇ·ñ»ñÊ¤£¬²»¼ì²éÊıÖµ
+                if (LeftHandWin != 1) {  // ä¿®æ­£ï¼šåªæ£€æŸ¥æ˜¯å¦è·èƒœï¼Œä¸æ£€æŸ¥æ•°å€¼
                     ChooseLeftHand = 1;
-                    cout << "ÄãÑ¡ÔñÁË×óÊÖ£¨" << LeftNum << ")" << endl;
+                    cout << "ä½ é€‰æ‹©äº†å·¦æ‰‹ï¼ˆ" << LeftNum << ")" << endl;
                 }
                 else {
-                    cout << "ÕâÖ»ÊÖÒÑ¾­Ó®ÁËÄó£¬°ïÄãÑ¡ÓÒÊÖÁË" << endl;
+                    cout << "è¿™åªæ‰‹å·²ç»èµ¢äº†æï¼Œå¸®ä½ é€‰å³æ‰‹äº†" << endl;
                     ChooseRightHand = 1;
                     Sleep(500);
-                    cout << "ÄãÑ¡ÔñÁËÓÒÊÖ£¨" << RightNum << "£©" << endl;
+                    cout << "ä½ é€‰æ‹©äº†å³æ‰‹ï¼ˆ" << RightNum << "ï¼‰" << endl;
                 }
                 break;
             }
             case 'R': {
-                if (RightHandWin != 1) {  // ĞŞÕı£ºÖ»¼ì²éÊÇ·ñ»ñÊ¤£¬²»¼ì²éÊıÖµ
+                if (RightHandWin != 1) {  // ä¿®æ­£ï¼šåªæ£€æŸ¥æ˜¯å¦è·èƒœï¼Œä¸æ£€æŸ¥æ•°å€¼
                     ChooseRightHand = 1;
-                    cout << "ÄãÑ¡ÔñÁËÓÒÊÖ£¨" << RightNum << "£©" << endl;
+                    cout << "ä½ é€‰æ‹©äº†å³æ‰‹ï¼ˆ" << RightNum << "ï¼‰" << endl;
                 }
                 else {
-                    cout << "ÕâÖ»ÊÖÒÑ¾­Ó®ÁËÄó£¬°ïÄãÑ¡×óÊÖÁË" << endl;
+                    cout << "è¿™åªæ‰‹å·²ç»èµ¢äº†æï¼Œå¸®ä½ é€‰å·¦æ‰‹äº†" << endl;
                     ChooseLeftHand = 1;
                     Sleep(500);
-                    cout << "ÄãÑ¡ÔñÁË×óÊÖ£¨" << LeftNum << "£©" << endl;
+                    cout << "ä½ é€‰æ‹©äº†å·¦æ‰‹ï¼ˆ" << LeftNum << "ï¼‰" << endl;
                 }
                 break;
             }
             default: {
-                cout << "Î´ÊäÈëÕıÈ·×Ö·û£¬½ø³Ì½áÊø" << endl;
+                cout << "æœªè¾“å…¥æ­£ç¡®å­—ç¬¦ï¼Œè¿›ç¨‹ç»“æŸ" << endl;
                 return 1;
             }
             }
-            //¼ÓaiÄÄÖ»ÊÖ
+            //åŠ aiå“ªåªæ‰‹
             char ChooseHand;
-            cout << "ÄãÒª¼ÓaiµÄÄÄÖ»ÊÖ£¨ÊäÈëL»òR£©";
+            cout << "ä½ è¦åŠ aiçš„å“ªåªæ‰‹ï¼ˆè¾“å…¥Læˆ–Rï¼‰";
             cin >> ChooseHand;
             switch (ChooseHand) {
             case 'L': {
-                if (LeftHandWin2 != 1) {  // ĞŞÕı£º¼ì²éAIµÄÊÖÊÇ·ñ»ñÊ¤
+                if (LeftHandWin2 != 1) {  // ä¿®æ­£ï¼šæ£€æŸ¥AIçš„æ‰‹æ˜¯å¦è·èƒœ
                     if (ChooseLeftHand == 1) {
-                        cout << "ÄãÑ¡ÔñÁËaiµÄ×óÊÖ£¨" << LeftNum2 << ")" << endl;
+                        cout << "ä½ é€‰æ‹©äº†aiçš„å·¦æ‰‹ï¼ˆ" << LeftNum2 << ")" << endl;
                         LeftNum += LeftNum2;
                         if (LeftNum > 10) {
                             LeftNum -= 10;
                         }
-                        cout << "¼ÆËãÍê±Ï£¬´ËÊ±ÄãµÄ×óÊÖÊÇ£º" << LeftNum << endl;
+                        cout << "è®¡ç®—å®Œæ¯•ï¼Œæ­¤æ—¶ä½ çš„å·¦æ‰‹æ˜¯ï¼š" << LeftNum << endl;
                     }
                     else if (ChooseRightHand == 1) {
-                        cout << "ÄãÑ¡ÔñÁËaiµÄ×óÊÖ£¨" << LeftNum2 << ")" << endl;
+                        cout << "ä½ é€‰æ‹©äº†aiçš„å·¦æ‰‹ï¼ˆ" << LeftNum2 << ")" << endl;
                         RightNum += LeftNum2;
                         if (RightNum > 10) {
                             RightNum -= 10;
                         }
-                        cout << "¼ÆËãÍê±Ï£¬´ËÊ±ÄãµÄÓÒÊÖÊÇ£º" << RightNum << endl;
+                        cout << "è®¡ç®—å®Œæ¯•ï¼Œæ­¤æ—¶ä½ çš„å³æ‰‹æ˜¯ï¼š" << RightNum << endl;
                     }
                 }
                 else {
-                    cout << "AIµÄ×óÊÖÒÑ¾­»ñÊ¤£¬²»ÄÜÑ¡Ôñ" << endl;
+                    cout << "AIçš„å·¦æ‰‹å·²ç»è·èƒœï¼Œä¸èƒ½é€‰æ‹©" << endl;
                 }
                 break;
             }
 
             case 'R': {
-                if (RightHandWin2 != 1) {  // ĞŞÕı£º¼ì²éAIµÄÊÖÊÇ·ñ»ñÊ¤
+                if (RightHandWin2 != 1) {  // ä¿®æ­£ï¼šæ£€æŸ¥AIçš„æ‰‹æ˜¯å¦è·èƒœ
                     if (ChooseLeftHand == 1) {
-                        cout << "ÄãÑ¡ÔñÁËaiµÄÓÒÊÖ£¨" << RightNum2 << ")" << endl;
+                        cout << "ä½ é€‰æ‹©äº†aiçš„å³æ‰‹ï¼ˆ" << RightNum2 << ")" << endl;
                         LeftNum += RightNum2;
                         if (LeftNum > 10) {
                             LeftNum -= 10;
                         }
-                        cout << "¼ÆËãÍê±Ï£¬´ËÊ±ÄãµÄ×óÊÖÊÇ£º" << LeftNum << endl;
+                        cout << "è®¡ç®—å®Œæ¯•ï¼Œæ­¤æ—¶ä½ çš„å·¦æ‰‹æ˜¯ï¼š" << LeftNum << endl;
                     }
                     else if (ChooseRightHand == 1) {
-                        cout << "ÄãÑ¡ÔñÁËaiµÄÓÒÊÖ£¨" << RightNum2 << ")" << endl;
+                        cout << "ä½ é€‰æ‹©äº†aiçš„å³æ‰‹ï¼ˆ" << RightNum2 << ")" << endl;
                         RightNum += RightNum2;
                         if (RightNum > 10) {
                             RightNum -= 10;
                         }
-                        cout << "¼ÆËãÍê±Ï£¬´ËÊ±ÄãµÄÓÒÊÖÊÇ£º" << RightNum << endl;
+                        cout << "è®¡ç®—å®Œæ¯•ï¼Œæ­¤æ—¶ä½ çš„å³æ‰‹æ˜¯ï¼š" << RightNum << endl;
                     }
                 }
                 else {
-                    cout << "AIµÄÓÒÊÖÒÑ¾­»ñÊ¤£¬²»ÄÜÑ¡Ôñ" << endl;
+                    cout << "AIçš„å³æ‰‹å·²ç»è·èƒœï¼Œä¸èƒ½é€‰æ‹©" << endl;
                 }
                 break;
             }
 
             default: {
-                cout << "Î´ÊäÈëÕıÈ·×Ö·û£¬½ø³Ì½áÊø" << endl;
+                cout << "æœªè¾“å…¥æ­£ç¡®å­—ç¬¦ï¼Œè¿›ç¨‹ç»“æŸ" << endl;
                 return 1;
             }
             }
 
-            //ÏÔÊ¾×óÓÒÊÖ
-            cout << "ÕâÊÇÄãµÄ×ó¡¢ÓÒÊÖ" << endl;
-            cout << "×ó£º" << LeftNum << " ÓÒ£º" << RightNum << endl;
+            //æ˜¾ç¤ºå·¦å³æ‰‹
+            cout << "è¿™æ˜¯ä½ çš„å·¦ã€å³æ‰‹" << endl;
+            cout << "å·¦ï¼š" << LeftNum << " å³ï¼š" << RightNum << endl;
 
-            cout << "ÕâÊÇaiµÄ×ó¡¢ÓÒÊÖ" << endl;
-            cout << "×ó£º" << LeftNum2 << " ÓÒ£º" << RightNum2 << endl;
+            cout << "è¿™æ˜¯aiçš„å·¦ã€å³æ‰‹" << endl;
+            cout << "å·¦ï¼š" << LeftNum2 << " å³ï¼š" << RightNum2 << endl;
 
-            ///////////////////////////////////////////////////////////////////////////////////////ai»ØºÏ
+            ///////////////////////////////////////////////////////////////////////////////////////aiå›åˆ
             short RandomSelfHandChoice = dist(gen);
             short RandomHandChoice = dist(gen);
-            cout << "ai»ØºÏ" << endl;
+            cout << "aiå›åˆ" << endl;
             Sleep(2000);
 
-            // ÖØ¹¹AI»ØºÏÂß¼­
+            // é‡æ„AIå›åˆé€»è¾‘
             bool aiActionTaken = false;
 
-            // AIÑ¡Ôñ×Ô¼ºµÄÊÖ
+            // AIé€‰æ‹©è‡ªå·±çš„æ‰‹
             if (RandomSelfHandChoice == 1 && LeftHandWin2 != 1) {
-                cout << "aiÊ¹ÓÃÁË×óÊÖ£¨" << LeftNum2 << "£©" << endl;
+                cout << "aiä½¿ç”¨äº†å·¦æ‰‹ï¼ˆ" << LeftNum2 << "ï¼‰" << endl;
                 Sleep(2000);
 
-                // AIÑ¡ÔñÍæ¼ÒµÄÊÖ
+                // AIé€‰æ‹©ç©å®¶çš„æ‰‹
                 if (RandomHandChoice == 1 && LeftHandWin != 1) {
-                    cout << "aiÑ¡ÔñÁËÄãµÄ×óÊÖ£¨" << LeftNum << "£©" << endl;
+                    cout << "aié€‰æ‹©äº†ä½ çš„å·¦æ‰‹ï¼ˆ" << LeftNum << "ï¼‰" << endl;
                     LeftNum2 += LeftNum;
                     if (LeftNum2 > 10) {
                         LeftNum2 -= 10;
                     }
                     Sleep(2000);
-                    cout << "ai´ËÊ±×óÊÖµÄÊı£º" << LeftNum2 << endl;
+                    cout << "aiæ­¤æ—¶å·¦æ‰‹çš„æ•°ï¼š" << LeftNum2 << endl;
                     aiActionTaken = true;
                 }
                 else if (RightHandWin != 1) {
-                    cout << "aiÑ¡ÔñÁËÄãµÄÓÒÊÖ£¨" << RightNum << "£©" << endl;
+                    cout << "aié€‰æ‹©äº†ä½ çš„å³æ‰‹ï¼ˆ" << RightNum << "ï¼‰" << endl;
                     LeftNum2 += RightNum;
                     if (LeftNum2 > 10) {
                         LeftNum2 -= 10;
                     }
                     Sleep(2000);
-                    cout << "ai´ËÊ±×óÊÖµÄÊı£º" << LeftNum2 << endl;
+                    cout << "aiæ­¤æ—¶å·¦æ‰‹çš„æ•°ï¼š" << LeftNum2 << endl;
                     aiActionTaken = true;
                 }
             }
             else if (RandomSelfHandChoice == 2 && RightHandWin2 != 1) {
-                cout << "aiÊ¹ÓÃÁËÓÒÊÖ£¨" << RightNum2 << "£©" << endl;
+                cout << "aiä½¿ç”¨äº†å³æ‰‹ï¼ˆ" << RightNum2 << "ï¼‰" << endl;
                 Sleep(2000);
 
-                // AIÑ¡ÔñÍæ¼ÒµÄÊÖ
+                // AIé€‰æ‹©ç©å®¶çš„æ‰‹
                 if (RandomHandChoice == 1 && LeftHandWin != 1) {
-                    cout << "aiÑ¡ÔñÁËÄãµÄ×óÊÖ£¨" << LeftNum << "£©" << endl;
+                    cout << "aié€‰æ‹©äº†ä½ çš„å·¦æ‰‹ï¼ˆ" << LeftNum << "ï¼‰" << endl;
                     RightNum2 += LeftNum;
                     if (RightNum2 > 10) {
                         RightNum2 -= 10;
                     }
                     Sleep(2000);
-                    cout << "ai´ËÊ±ÓÒÊÖµÄÊı£º" << RightNum2 << endl;
+                    cout << "aiæ­¤æ—¶å³æ‰‹çš„æ•°ï¼š" << RightNum2 << endl;
                     aiActionTaken = true;
                 }
                 else if (RightHandWin != 1) {
-                    cout << "aiÑ¡ÔñÁËÄãµÄÓÒÊÖ£¨" << RightNum << "£©" << endl;
+                    cout << "aié€‰æ‹©äº†ä½ çš„å³æ‰‹ï¼ˆ" << RightNum << "ï¼‰" << endl;
                     RightNum2 += RightNum;
                     if (RightNum2 > 10) {
                         RightNum2 -= 10;
                     }
                     Sleep(2000);
-                    cout << "ai´ËÊ±ÓÒÊÖµÄÊı£º" << RightNum2 << endl;
+                    cout << "aiæ­¤æ—¶å³æ‰‹çš„æ•°ï¼š" << RightNum2 << endl;
                     aiActionTaken = true;
                 }
             }
 
-            // Èç¹ûAIÃ»ÓĞÖ´ĞĞ¶¯×÷£¨ÒòÎªÑ¡ÔñµÄÊÖ²»¿ÉÓÃ£©£¬³¢ÊÔÁíÒ»Ö»ÊÖ
+            // å¦‚æœAIæ²¡æœ‰æ‰§è¡ŒåŠ¨ä½œï¼ˆå› ä¸ºé€‰æ‹©çš„æ‰‹ä¸å¯ç”¨ï¼‰ï¼Œå°è¯•å¦ä¸€åªæ‰‹
             if (!aiActionTaken) {
                 if (RandomSelfHandChoice == 1 && RightHandWin2 != 1) {
-                    cout << "ai¸ÄÓÃÁËÓÒÊÖ£¨" << RightNum2 << "£©" << endl;
+                    cout << "aiæ”¹ç”¨äº†å³æ‰‹ï¼ˆ" << RightNum2 << "ï¼‰" << endl;
                     Sleep(2000);
 
                     if (RandomHandChoice == 1 && LeftHandWin != 1) {
-                        cout << "aiÑ¡ÔñÁËÄãµÄ×óÊÖ£¨" << LeftNum << "£©" << endl;
+                        cout << "aié€‰æ‹©äº†ä½ çš„å·¦æ‰‹ï¼ˆ" << LeftNum << "ï¼‰" << endl;
                         RightNum2 += LeftNum;
                         if (RightNum2 > 10) {
                             RightNum2 -= 10;
                         }
                         Sleep(2000);
-                        cout << "ai´ËÊ±ÓÒÊÖµÄÊı£º" << RightNum2 << endl;
+                        cout << "aiæ­¤æ—¶å³æ‰‹çš„æ•°ï¼š" << RightNum2 << endl;
                     }
                     else if (RightHandWin != 1) {
-                        cout << "aiÑ¡ÔñÁËÄãµÄÓÒÊÖ£¨" << RightNum << "£©" << endl;
+                        cout << "aié€‰æ‹©äº†ä½ çš„å³æ‰‹ï¼ˆ" << RightNum << "ï¼‰" << endl;
                         RightNum2 += RightNum;
                         if (RightNum2 > 10) {
                             RightNum2 -= 10;
                         }
                         Sleep(2000);
-                        cout << "ai´ËÊ±ÓÒÊÖµÄÊı£º" << RightNum2 << endl;
+                        cout << "aiæ­¤æ—¶å³æ‰‹çš„æ•°ï¼š" << RightNum2 << endl;
                     }
                 }
                 else if (RandomSelfHandChoice == 2 && LeftHandWin2 != 1) {
-                    cout << "ai¸ÄÓÃÁË×óÊÖ£¨" << LeftNum2 << "£©" << endl;
+                    cout << "aiæ”¹ç”¨äº†å·¦æ‰‹ï¼ˆ" << LeftNum2 << "ï¼‰" << endl;
                     Sleep(2000);
 
                     if (RandomHandChoice == 1 && LeftHandWin != 1) {
-                        cout << "aiÑ¡ÔñÁËÄãµÄ×óÊÖ£¨" << LeftNum << "£©" << endl;
+                        cout << "aié€‰æ‹©äº†ä½ çš„å·¦æ‰‹ï¼ˆ" << LeftNum << "ï¼‰" << endl;
                         LeftNum2 += LeftNum;
                         if (LeftNum2 > 10) {
                             LeftNum2 -= 10;
                         }
                         Sleep(2000);
-                        cout << "ai´ËÊ±×óÊÖµÄÊı£º" << LeftNum2 << endl;
+                        cout << "aiæ­¤æ—¶å·¦æ‰‹çš„æ•°ï¼š" << LeftNum2 << endl;
                     }
                     else if (RightHandWin != 1) {
-                        cout << "aiÑ¡ÔñÁËÄãµÄÓÒÊÖ£¨" << RightNum << "£©" << endl;
+                        cout << "aié€‰æ‹©äº†ä½ çš„å³æ‰‹ï¼ˆ" << RightNum << "ï¼‰" << endl;
                         LeftNum2 += RightNum;
                         if (LeftNum2 > 10) {
                             LeftNum2 -= 10;
                         }
                         Sleep(2000);
-                        cout << "ai´ËÊ±×óÊÖµÄÊı£º" << LeftNum2 << endl;
+                        cout << "aiæ­¤æ—¶å·¦æ‰‹çš„æ•°ï¼š" << LeftNum2 << endl;
                     }
                 }
             }
 
-            // Èç¹ûAIÈÔÈ»Ã»ÓĞÖ´ĞĞ¶¯×÷£¬ËµÃ÷ËùÓĞÑ¡Ôñ¶¼²»¿ÉÓÃ
+            // å¦‚æœAIä»ç„¶æ²¡æœ‰æ‰§è¡ŒåŠ¨ä½œï¼Œè¯´æ˜æ‰€æœ‰é€‰æ‹©éƒ½ä¸å¯ç”¨
             if (!aiActionTaken) {
-                cout << "aiÎŞ·¨ĞĞ¶¯£¬Ìø¹ı»ØºÏ" << endl;
+                cout << "aiæ— æ³•è¡ŒåŠ¨ï¼Œè·³è¿‡å›åˆ" << endl;
             }
 
-            //////////////////////////////////////////////////////////////////////////////////////////////////ÏÔÊ¾×óÓÒÊÖ
-            cout << "ÕâÊÇÄãµÄ×ó¡¢ÓÒÊÖ" << endl;
-            cout << "×ó£º" << LeftNum << " ÓÒ£º" << RightNum << endl;
+            //////////////////////////////////////////////////////////////////////////////////////////////////æ˜¾ç¤ºå·¦å³æ‰‹
+            cout << "è¿™æ˜¯ä½ çš„å·¦ã€å³æ‰‹" << endl;
+            cout << "å·¦ï¼š" << LeftNum << " å³ï¼š" << RightNum << endl;
 
-            cout << "ÕâÊÇaiµÄ×ó¡¢ÓÒÊÖ" << endl;
-            cout << "×ó£º" << LeftNum2 << " ÓÒ£º" << RightNum2 << endl;
+            cout << "è¿™æ˜¯aiçš„å·¦ã€å³æ‰‹" << endl;
+            cout << "å·¦ï¼š" << LeftNum2 << " å³ï¼š" << RightNum2 << endl;
 
-            //»ñÊ¤Ìõ¼ş¼°µ¥ÊÖ
+            //è·èƒœæ¡ä»¶åŠå•æ‰‹
             if (LeftNum == 10 && !LeftHandWin) {
                 LeftHandWin = 1;
-                cout << "ÄãµÄ×óÊÖÒÑ»ñÊ¤£¬½«²»¿ÉÓÃ" << endl;
+                cout << "ä½ çš„å·¦æ‰‹å·²è·èƒœï¼Œå°†ä¸å¯ç”¨" << endl;
                 if (RightHandWin == 1) {
-                    cout << "ÄãÒÑ»ñÊ¤£¬½ø³Ì½«ÒÔ´úÂë0ÍË³ö" << endl;
+                    cout << "ä½ å·²è·èƒœï¼Œè¿›ç¨‹å°†ä»¥ä»£ç 0é€€å‡º" << endl;
                     return 0;
                 }
             }
 
             if (RightNum == 10 && !RightHandWin) {
                 RightHandWin = 1;
-                cout << "ÄãµÄÓÒÊÖÒÑ»ñÊ¤£¬½«²»¿ÉÓÃ" << endl;
+                cout << "ä½ çš„å³æ‰‹å·²è·èƒœï¼Œå°†ä¸å¯ç”¨" << endl;
                 if (LeftHandWin == 1) {
-                    cout << "ÄãÒÑ»ñÊ¤£¬½ø³Ì½«ÒÔ´úÂë0ÍË³ö" << endl;
+                    cout << "ä½ å·²è·èƒœï¼Œè¿›ç¨‹å°†ä»¥ä»£ç 0é€€å‡º" << endl;
                     return 0;
                 }
             }
 
             if (LeftNum2 == 10 && !LeftHandWin2) {
                 LeftHandWin2 = 1;
-                cout << "aiµÄ×óÊÖÒÑ»ñÊ¤£¬½«²»¿ÉÓÃ" << endl;
+                cout << "aiçš„å·¦æ‰‹å·²è·èƒœï¼Œå°†ä¸å¯ç”¨" << endl;
                 if (RightHandWin2 == 1) {
-                    cout << "ÄãÊäÁË£¬½ø³Ì½«ÒÔ´úÂë2ÍË³ö" << endl;
+                    cout << "ä½ è¾“äº†ï¼Œè¿›ç¨‹å°†ä»¥ä»£ç 2é€€å‡º" << endl;
                     return 2;
                 }
             }
 
             if (RightNum2 == 10 && !RightHandWin2) {
                 RightHandWin2 = 1;
-                cout << "aiµÄÓÒÊÖÒÑ»ñÊ¤£¬½«²»¿ÉÓÃ" << endl;
+                cout << "aiçš„å³æ‰‹å·²è·èƒœï¼Œå°†ä¸å¯ç”¨" << endl;
                 if (LeftHandWin2 == 1) {
-                    cout << "ÄãÊäÁË£¬½ø³Ì½«ÒÔ´úÂë2ÍË³ö" << endl;
+                    cout << "ä½ è¾“äº†ï¼Œè¿›ç¨‹å°†ä»¥ä»£ç 2é€€å‡º" << endl;
                     return 2;
                 }
             }
@@ -312,7 +312,7 @@ int main()
         }
 
         //Game = 1;
-    //}//×îÍâÎ§forµÄÀ©»Ø
+    //}//æœ€å¤–å›´forçš„æ‰©å›
 
     system("pause");
     return 0;
