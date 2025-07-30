@@ -30,7 +30,7 @@ int main()
         cout << "游戏开始" << endl;
     }
     //初始化左右手
-    //for (;;) {  //游戏主循环
+    //for (;;) {  
 
         short LeftNum = 1, RightNum = 1;
         cout << "这是你的两个手，左、右手此时都是1" << endl;
@@ -49,7 +49,7 @@ int main()
             cin >> Choice;
             switch (Choice) {
             case 'L': {
-                if (LeftHandWin != 1) {  // 修正：只检查是否获胜，不检查数值
+                if (LeftHandWin != 1) {  
                     ChooseLeftHand = 1;
                     cout << "你选择了左手（" << LeftNum << ")" << endl;
                 }
@@ -62,7 +62,7 @@ int main()
                 break;
             }
             case 'R': {
-                if (RightHandWin != 1) {  // 修正：只检查是否获胜，不检查数值
+                if (RightHandWin != 1) {  // 
                     ChooseRightHand = 1;
                     cout << "你选择了右手（" << RightNum << "）" << endl;
                 }
@@ -85,7 +85,7 @@ int main()
             cin >> ChooseHand;
             switch (ChooseHand) {
             case 'L': {
-                if (LeftHandWin2 != 1) {  // 修正：检查AI的手是否获胜
+                if (LeftHandWin2 != 1) {  
                     if (ChooseLeftHand == 1) {
                         cout << "你选择了ai的左手（" << LeftNum2 << ")" << endl;
                         LeftNum += LeftNum2;
@@ -153,7 +153,6 @@ int main()
             cout << "ai回合" << endl;
             Sleep(2000);
 
-            // 重构AI回合逻辑
             bool aiActionTaken = false;
 
             // AI选择自己的手
@@ -210,7 +209,6 @@ int main()
                 }
             }
 
-            // 如果AI没有执行动作（因为选择的手不可用），尝试另一只手
             if (!aiActionTaken) {
                 if (RandomSelfHandChoice == 1 && RightHandWin2 != 1) {
                     cout << "ai改用了右手（" << RightNum2 << "）" << endl;
@@ -260,7 +258,7 @@ int main()
                 }
             }
 
-            // 如果AI仍然没有执行动作，说明所有选择都不可用
+
             if (!aiActionTaken) {
                 cout << "ai无法行动，跳过回合" << endl;
             }
