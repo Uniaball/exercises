@@ -27,5 +27,5 @@ jobs:
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
-        name: HelloWorld
-        path: build/Release/project1.exe
+        name: project1
+        path: projects/project1/build/Release/project1.exe
