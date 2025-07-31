@@ -5,30 +5,30 @@
 #include "main.h"
 
 using namespace std;
-random_device rd;                                    //¸ãËæ»úÓÃµÄÄó
+random_device rd;                                    //æéšæœºç”¨çš„æ
 mt19937 gen(rd());
 uniform_int_distribution<int> dist(1, 3);
 
 
 int main() {
-	//¿ªÊ¼ÓÎÏ·¼ì²â£¨ÈË»ú²âÊÔ£©
+	//å¼€å§‹æ¸¸æˆæ£€æµ‹ï¼ˆäººæœºæµ‹è¯•ï¼‰
 	string StartGame;
-	cout << "ÊäÈëstart¿ªÊ¼ÓÎÏ·" << endl;
+	cout << "è¾“å…¥startå¼€å§‹æ¸¸æˆ" << endl;
 	cin >> StartGame;
 	if (StartGame == "start") {
-		cout << "ÊäÈëÕıÈ·×Ö·û£¬ÓÎÏ·¿ªÊ¼" << endl;
+		cout << "è¾“å…¥æ­£ç¡®å­—ç¬¦ï¼Œæ¸¸æˆå¼€å§‹" << endl;
 		Sleep(2000);
 		system("cls");  
 
-		GameSum();  //·Ï»°º¯Êıµ÷ÓÃ
+		GameSum();  //åºŸè¯å‡½æ•°è°ƒç”¨
 
 		Sleep(3000);
 		system("cls");
 
-		Start();  //Ñ¡Ôñº¯Êıµ÷ÓÃ
+		Start();  //é€‰æ‹©å‡½æ•°è°ƒç”¨
 	}
 	else {
-		cout << "Î´ÊäÈëÕıÈ·×Ö·û£¬½ø³Ì½«ÒÔ´úÂë1ÍË³ö" << endl;
+		cout << "æœªè¾“å…¥æ­£ç¡®å­—ç¬¦ï¼Œè¿›ç¨‹å°†ä»¥ä»£ç 1é€€å‡º" << endl;
 		return 1;
 	}
 
@@ -41,20 +41,20 @@ int main() {
 
 
 
-void GameSum() { //·Ï»°º¯Êı
-	cout << "±¾ÓÎÏ·¾ÍÊÇÒ»¸öÊ¯Í·¼ôµ¶²¼Äó,Í¬Ê±À´Á·Á·ÎÒµÄº¯ÊıË®Æ½" << endl;
-	cout << "ÄãµÄ¶ÔÊÖÈÔÈ»ÊÇÄÇ¸öÈõÖÇaiÄó" << endl;
+void GameSum() { //åºŸè¯å‡½æ•°
+	cout << "æœ¬æ¸¸æˆå°±æ˜¯ä¸€ä¸ªçŸ³å¤´å‰ªåˆ€å¸ƒæ,åŒæ—¶æ¥ç»ƒç»ƒæˆ‘çš„å‡½æ•°æ°´å¹³" << endl;
+	cout << "ä½ çš„å¯¹æ‰‹ä»ç„¶æ˜¯é‚£ä¸ªå¼±æ™ºaiæ" << endl;
 }
 
 
 short Start() {
 	char s, j, b;
-	cout << "ÄãÒª³öÊ²Ã´£¨Ê¯Í·°´¡°S¡±£¬¼ôµ¶°´¡°J¡±£¬²¼°´¡°B¡±£©£º" << endl;                               //bzlÍ¬¿îµÄÕì²â¼üÅÌº¯Êı
+	cout << "ä½ è¦å‡ºä»€ä¹ˆï¼ˆçŸ³å¤´æŒ‰â€œSâ€ï¼Œå‰ªåˆ€æŒ‰â€œJâ€ï¼Œå¸ƒæŒ‰â€œBâ€ï¼‰ï¼š" << endl;                               //bzlåŒæ¬¾çš„ä¾¦æµ‹é”®ç›˜å‡½æ•°
 	switch (_getche()) {
 	case 's': {
 		cout << "\n";
-		cout << "ÄãÑ¡ÔñÁËÊ¯Í·" << endl;
-		cout << "µÈ´ıaiÑ¡Ôñ" << endl;
+		cout << "ä½ é€‰æ‹©äº†çŸ³å¤´" << endl;
+		cout << "ç­‰å¾…aié€‰æ‹©" << endl;
 		s = 's';
 		j = 'N';
 		b = 'N';
@@ -63,8 +63,8 @@ short Start() {
 	}
 	case 'j': {
 		cout << "\n";
-		cout << "ÄãÑ¡ÔñÁË¼ôµ¶" << endl;
-		cout << "µÈ´ıaiÑ¡Ôñ" << endl;
+		cout << "ä½ é€‰æ‹©äº†å‰ªåˆ€" << endl;
+		cout << "ç­‰å¾…aié€‰æ‹©" << endl;
 		s = 'N';
 		j = 'j';
 		b = 'N';
@@ -73,8 +73,8 @@ short Start() {
 	}
 	case 'b': {
 		cout << "\n";
-		cout << "ÄãÑ¡ÔñÁË²¼" << endl;
-		cout << "µÈ´ıaiÑ¡Ôñ" << endl;
+		cout << "ä½ é€‰æ‹©äº†å¸ƒ" << endl;
+		cout << "ç­‰å¾…aié€‰æ‹©" << endl;
 		s = 'N';
 		j = 'N';
 		b = 'b';
@@ -83,8 +83,8 @@ short Start() {
 	}
 	default: {
 		cout << "\n";
-		cout << "ÄãÅ£Ä§µÄ°´É¶Äó" << endl;
-		cout << "¸øÄã±ÀÁË" << endl;
+		cout << "ä½ ç‰›é­”çš„æŒ‰å•¥æ" << endl;
+		cout << "ç»™ä½ å´©äº†" << endl;
 		return 1;
 	}
 	}
@@ -94,105 +94,105 @@ short Start() {
 
 
 short Keyboard(char s, char j, char b) {    
-	short AiRandomChoose = dist(gen);                      //¸ºÔğ´¦Àí¶ÔÓ¦¼ü¡¢ai»ØºÏ¼°ÓÎÏ·Ê¤¸º
-	if (s == 's') {   //Íæ¼ÒÑ¡ÔñÊ¯Í·
+	short AiRandomChoose = dist(gen);                      //è´Ÿè´£å¤„ç†å¯¹åº”é”®ã€aiå›åˆåŠæ¸¸æˆèƒœè´Ÿ
+	if (s == 's') {   //ç©å®¶é€‰æ‹©çŸ³å¤´
 		switch (AiRandomChoose) {
-		case 1: {          //Ê¯Í·
+		case 1: {          //çŸ³å¤´
 			Sleep(2000);
-			cout << "aiÑ¡ÔñÁËÊ¯Í·" << endl;
+			cout << "aié€‰æ‹©äº†çŸ³å¤´" << endl;
 			Sleep(500);
-			cout << "ÄãÃÇÆ½¾Ö" << endl;
+			cout << "ä½ ä»¬å¹³å±€" << endl;
 			Sleep(500);
-			cout << "ÇëÖØĞÂÑ¡Ôñ" << endl;
-			Start();       //ÖØĞÂÖ´ĞĞstartº¯Êı
+			cout << "è¯·é‡æ–°é€‰æ‹©" << endl;
+			Start();       //é‡æ–°æ‰§è¡Œstartå‡½æ•°
 			break;
 		}
-		case 2: {         //¼ôµ¶
+		case 2: {         //å‰ªåˆ€
 			Sleep(2000);
-			cout << "aiÑ¡ÔñÁË¼ôµ¶" << endl;
+			cout << "aié€‰æ‹©äº†å‰ªåˆ€" << endl;
 			Sleep(500);
-			cout << "ÄãÓ®ÁË" << endl;
+			cout << "ä½ èµ¢äº†" << endl;
 			Sleep(500);
-			cout << "£¨ÓÎÏ·½«ÒÔ´úÂë0ÍË³ö£©" << endl;
+			cout << "æ¸¸æˆå°†ä»¥ä»£ç 0é€€å‡º" << endl;
 			return 0;
 			break;
 		}
-		case 3: {         //²¼
+		case 3: {         //å¸ƒ
 			Sleep(2000);
-			cout << "aiÑ¡ÔñÁË²¼" << endl;
+			cout << "aié€‰æ‹©äº†å¸ƒ" << endl;
 			Sleep(500);
-			cout << "ÄãÊäÁË" << endl;
+			cout << "ä½ è¾“äº†" << endl;
 			Sleep(500);
-			cout << "ÓÎÏ·½«ÒÔ´úÂë2ÍË³ö" << endl;
+			cout << "æ¸¸æˆå°†ä»¥ä»£ç 2é€€å‡º" << endl;
 			return 2;
 			break;
 		}
 		}
 	}
-	else if (j == 'j') {        //Íæ¼ÒÑ¡Ôñ¼ôµ¶
+	else if (j == 'j') {        //ç©å®¶é€‰æ‹©å‰ªåˆ€
 		switch (AiRandomChoose) {
-		case 1: {          //Ê¯Í·
+		case 1: {          //çŸ³å¤´
 			Sleep(2000);
-			cout << "aiÑ¡ÔñÁËÊ¯Í·" << endl;
+			cout << "aié€‰æ‹©äº†çŸ³å¤´" << endl;
 			Sleep(500);
-			cout << "ÄãÊäÁË" << endl;
+			cout << "ä½ è¾“äº†" << endl;
 			Sleep(500);
-			cout << "ÓÎÏ·½«ÒÔ´úÂë2ÍË³ö" << endl;
+			cout << "æ¸¸æˆå°†ä»¥ä»£ç 2é€€å‡º" << endl;
 			return 2;   
 			break;
 		}
-		case 2: {         //¼ôµ¶
+		case 2: {         //å‰ªåˆ€
 			Sleep(2000);
-			cout << "aiÑ¡ÔñÁË¼ôµ¶" << endl;
+			cout << "aié€‰æ‹©äº†å‰ªåˆ€" << endl;
 			Sleep(500);
-			cout << "ÄãÃÇÆ½¾Ö" << endl;
+			cout << "ä½ ä»¬å¹³å±€" << endl;
 			Sleep(500);
-			cout << "ÇëÖØĞÂÑ¡Ôñ" << endl;
-			Start();          //ÖØĞÂÖ´ĞĞstartº¯Êı
+			cout << "è¯·é‡æ–°é€‰æ‹©" << endl;
+			Start();          //é‡æ–°æ‰§è¡Œstartå‡½æ•°
 			break;
 		}
-		case 3: {         //²¼
+		case 3: {         //å¸ƒ
 			Sleep(2000);
-			cout << "aiÑ¡ÔñÁË²¼" << endl;
+			cout << "aié€‰æ‹©äº†å¸ƒ" << endl;
 			Sleep(500);
-			cout << "ÄãÓ®ÁË" << endl;
+			cout << "ä½ èµ¢äº†" << endl;
 			Sleep(500);
-			cout << "ÓÎÏ·½«ÒÔ´úÂë0ÍË³ö" << endl;
+			cout << "æ¸¸æˆå°†ä»¥ä»£ç 0é€€å‡º" << endl;
 			return 0;
 			break;
 		}
 		}
 	}
-	else if (b == 'b') {        //Íæ¼ÒÑ¡Ôñ²¼
+	else if (b == 'b') {        //ç©å®¶é€‰æ‹©å¸ƒ
 		switch (AiRandomChoose) {
-		case 1: {          //Ê¯Í·
+		case 1: {          //çŸ³å¤´
 			Sleep(2000);
-			cout << "aiÑ¡ÔñÁËÊ¯Í·" << endl;
+			cout << "aié€‰æ‹©äº†çŸ³å¤´" << endl;
 			Sleep(500);
-			cout << "ÄãÓ®ÁË" << endl;
+			cout << "ä½ èµ¢äº†" << endl;
 			Sleep(500);
-			cout << "ÓÎÏ·½«ÒÔ´úÂë0ÍË³ö" << endl;
+			cout << "æ¸¸æˆå°†ä»¥ä»£ç 0é€€å‡º" << endl;
 			return 0;
 			break;
 		}
-		case 2: {         //¼ôµ¶
+		case 2: {         //å‰ªåˆ€
 			Sleep(2000);
-			cout << "aiÑ¡ÔñÁË¼ôµ¶" << endl;
+			cout << "aié€‰æ‹©äº†å‰ªåˆ€" << endl;
 			Sleep(500);
-			cout << "ÄãÊäÁË" << endl;
+			cout << "ä½ è¾“äº†" << endl;
 			Sleep(500);
-			cout << "ÓÎÏ·½«ÒÔ´úÂë2ÍË³ö" << endl;
+			cout << "æ¸¸æˆå°†ä»¥ä»£ç 2é€€å‡º" << endl;
 			return 2;
 			break;
 		}
-		case 3: {         //²¼
+		case 3: {         //å¸ƒ
 			Sleep(2000);
-			cout << "aiÑ¡ÔñÁË²¼" << endl;
+			cout << "aié€‰æ‹©äº†å¸ƒ" << endl;
 			Sleep(500);
-			cout << "ÄãÃÇÆ½¾Ö" << endl;
+			cout << "ä½ ä»¬å¹³å±€" << endl;
 			Sleep(500);
-			cout << "ÇëÖØĞÂÑ¡Ôñ" << endl;
-			Start();          //ÖØĞÂÖ´ĞĞstartº¯Êı
+			cout << "è¯·é‡æ–°é€‰æ‹©" << endl;
+			Start();          //é‡æ–°æ‰§è¡Œstartå‡½æ•°
 			break;
 		}
 		}
