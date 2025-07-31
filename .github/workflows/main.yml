@@ -1,4 +1,4 @@
-name: CXX CI
+name: CXX CI(project1)
 
 on:
   push:
@@ -16,9 +16,9 @@ jobs:
     
     - name: Configure CMake
       run: |
-          cd projects/project1/
-          mkdir -p build
-          cmake -B build 
+          cd projects/project1/ `
+          mkdir -p build `
+          cmake -B build `
           -DCMAKE_BUILD_TYPE=Release
     
     - name: Build
