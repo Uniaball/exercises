@@ -22,7 +22,7 @@ jobs:
           -DCMAKE_BUILD_TYPE=Release
     
     - name: Build
-      run: cmake --build build --config Release --target project1 --parallel $env:NUMBER_OF_PROCESSORS
+      run: cmake --build projects/project1/build --config Release --target project1 --parallel $env:NUMBER_OF_PROCESSORS
     
     - name: Upload
       uses: actions/upload-artifact@v4
