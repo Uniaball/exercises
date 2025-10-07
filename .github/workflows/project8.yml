@@ -1,0 +1,50 @@
+name: CXX CI (project8)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_windows:
+    runs-on: windows-latest
+    name: Build Windows
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Configure CMake (Windows)
+      run: |
+          cd projects/project8/ 
+          mkdir -Force build 
+          cmake -B build `
+          -DCMAKE_BUILD_TYPE=Release
+    
+    - name: Build (Windows)
+      run: cmake --build projects/project8/build --config Release --target Project8 --parallel $env:NUMBER_OF_PROCESSORS
+    
+    - name: Upload Windows Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: project8-windows
+        path: projects/project8/build/Release/Project8.exe
+
+  build_linux:
+    runs-on: ubuntu-latest
+    name: Build Linux
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Configure CMake (Linux)
+      run: |
+          cd projects/project8/
+          mkdir -p build
+          cmake -B build -DCMAKE_BUILD_TYPE=Release
+    
+    - name: Build (Linux)
+      run: cmake --build projects/project8/build --config Release --target Project8 --parallel $(nproc)
+    
+    - name: Upload Linux Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: project8-linux
+        path: projects/project8/build/Project8
