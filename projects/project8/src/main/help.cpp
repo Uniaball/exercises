@@ -1,5 +1,4 @@
 #include "include.h"
-using namespace std;
 bool help(){
     cout << "注意事项：" << endl;
     cout << "1.编译和打包时源文件不能有空格（中文可以）" << endl;

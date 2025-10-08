@@ -1,5 +1,4 @@
 #include "include.h"
-using namespace std;
 
 void compile::cpp(){
     vector<string> fileNameList;

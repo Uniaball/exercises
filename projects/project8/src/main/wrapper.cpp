@@ -1,5 +1,4 @@
 #include "include.h"
-using namespace std;
 void wrap::staticLib(){
     vector<string> fileNameList;
     int num;
