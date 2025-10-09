@@ -71,6 +71,7 @@ static void main_cmake(){
         case 3:{
             if (receiveMakeFileReturnValue.empty()){
                 cout << "还没有生成构建文件！" << endl;
+                goto again;
             }
             else{
                 build(receiveMakeFileReturnValue, appName);

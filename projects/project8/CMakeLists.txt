@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(Project8
-    VERSION 2.1.0
+    VERSION 2.1.1
     DESCRIPTION "一个简易的C系语言工具"
     LANGUAGES CXX
 )
